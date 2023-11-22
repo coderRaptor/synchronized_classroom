@@ -1,0 +1,48 @@
+// 侧边栏 start
+.el-aside {
+    position: relative;
+    background-color: rgba(1, 28, 47, 0.5);
+    overflow: hidden;
+}
+
+.el-menu {
+    border-right: none;
+    color: #dfdede;
+
+    .el-menu-item {
+        display: flex;
+        align-items: center;
+        height: 72px;
+    }
+
+    .el-submenu {
+        // Index.vue中没有el-submenu__title
+        // 它属于el-submenu的子组件
+        // 也就是Index的子组件的子组件,想要修改其样式就要样式穿透(深度选择)
+        ::v-deep .el-submenu__title{
+            display: flex;
+            align-items: center;
+            height: 72px;
+        }
+    }
+
+    li.el-menu-item:hover{
+        background-color: transparent !important;
+        background-image: url('../assets/gensui.png');
+        background-size: 174px 72px;
+        background-repeat: no-repeat;
+    }
+    li.el-submenu:hover{
+        ::v-deep .el-submenu__title{
+            background-color: transparent !important;
+            background-image: url('../assets/gensui.png');
+            background-size: 174px 72px;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+
+
+// 侧边栏 end
+
